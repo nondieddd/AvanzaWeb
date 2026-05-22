@@ -109,7 +109,7 @@
     </section>
 
     <section id="requisitos" class="steps-section">
-        <h2 class="section-title">¿CÓMO OBTENER TU CRÉDITO?</h2>
+        <h2 class="section-title">¿CÓMO OBTENER TU SERVICIO FINANCIERO?</h2>
         <div class="section-divider"></div>
         <div class="steps-container">
             <div class="step-item">
@@ -237,27 +237,27 @@
         <div class="contacto-container">
             <div class="contacto-left">
                 <h3>SOLICITA INFORMACIÓN</h3>
-                <p>Un asesor se pondrá en contacto contigo para brindarte la mejor opción de crédito.</p>
+                <p>Un asesor se pondrá en contacto contigo para brindarte la mejor opción de servicio financiero.</p>
                 <div class="handshake-mock-bg"></div>
             </div>
             <div class="contacto-right">
-                <form class="form-avanza" onsubmit="event.preventDefault();">
+                <form id="contact-form" class="form-avanza">
                     <div class="form-row">
-                        <input type="text" placeholder="Nombre completo" required>
-                        <input type="tel" placeholder="Teléfono" required>
-                        <input type="text" placeholder="Ciudad" required>
+                        <input id="nombre" name="nombre" type="text" placeholder="Nombre completo" required>
+                        <input id="telefono" name="telefono" type="tel" placeholder="Teléfono" required>
+                        <input id="ciudad" name="ciudad" type="text" placeholder="Ciudad" required>
                     </div>
                     <div class="form-row">
-                        <input type="number" placeholder="Monto aproximado" required>
-                        <select required>
-                            <option value="" disabled selected>Tipo de crédito</option>
-                            <option value="personal">Crédito personal</option>
-                            <option value="hipotecario">Crédito hipotecario</option>
-                            <option value="automovil">Crédito para automóvil</option>
-                            <option value="pyme">Crédito pyme</option>
-                            <option value="otros">Otros.</option> 
+                        <input id="monto" name="monto" type="number" placeholder="Monto aproximado" required>
+                        <select id="tipoServicio" name="tipoServicio" required>
+                            <option value="" disabled selected>Tipo de servicio financiero</option>
+                            <option value="Servicio financiero personal">Servicio financiero personal</option>
+                            <option value="Servicio hipotecario">Servicio hipotecario</option>
+                            <option value="Servicio financiero para automóvil">Servicio financiero para automóvil</option>
+                            <option value="Servicio para pyme">Servicio para pyme</option>
+                            <option value="Otros">Otros</option>
                         </select>
-                        <textarea placeholder="Mensaje" rows="1"></textarea>
+                        <textarea id="mensaje" name="mensaje" placeholder="Mensaje" rows="1"></textarea>
                     </div>
                     <button type="submit" class="btn-submit-form">Quiero mi asesoría <i class="fa-solid fa-paper-plane"></i></button>
                 </form>
@@ -291,7 +291,7 @@
             </div>
             <div class="footer-links-column">
                 <h6>CONTACTO</h6>
-                <p><i class="fa-brands fa-whatsapp"></i> +52 56 5906 6707</p>
+                <p id="footer-whatsapp"><i class="fa-brands fa-whatsapp"></i> +52 56 5906 6707</p>
                 <p><i class="fa-regular fa-envelope"></i> contacto@avanza.com.mx</p>
             </div>
             <div class="footer-links-column">

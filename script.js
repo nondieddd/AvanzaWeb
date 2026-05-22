@@ -60,4 +60,28 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     });
+
+    // 4. ENVÍO DE FORMULARIO DIRECTO A WHATSAPP
+    const contactForm = document.getElementById("contact-form");
+    const footerWhatsapp = document.getElementById("footer-whatsapp");
+
+    if (contactForm && footerWhatsapp) {
+        contactForm.addEventListener("submit", (event) => {
+            event.preventDefault();
+
+            const nombre = document.getElementById("nombre").value.trim();
+            const telefono = document.getElementById("telefono").value.trim();
+            const ciudad = document.getElementById("ciudad").value.trim();
+            const monto = document.getElementById("monto").value.trim();
+            const tipoServicio = document.getElementById("tipoServicio").value;
+            const mensaje = document.getElementById("mensaje").value.trim() || "Sin mensaje adicional";
+
+            const rawPhone = footerWhatsapp.textContent.replace(/[^+\d]/g, "");
+            const whatsappNumber = rawPhone.replace(/\D/g, "");
+            const messageText = `Hola, quiero información sobre un servicio financiero.%0A%0ANombre: ${encodeURIComponent(nombre)}%0ATeléfono: ${encodeURIComponent(telefono)}%0ACiudad: ${encodeURIComponent(ciudad)}%0AMonto aproximado: ${encodeURIComponent(monto)}%0ATipo de servicio: ${encodeURIComponent(tipoServicio)}%0AMensaje: ${encodeURIComponent(mensaje)}`;
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${messageText}`;
+
+            window.open(whatsappUrl, "_blank");
+        });
+    }
 });
