@@ -87,7 +87,21 @@ body {
     background-color: var(--azul-oscuro-hero);
     padding: 9rem 2rem 11rem 2rem;
     position: relative;
-    background-image: radial-gradient(circle at 80% 30%, rgba(15, 32, 67, 0.6) 0%, transparent 60%);
+    background-image:
+        linear-gradient(180deg, rgba(3, 13, 26, 0.85) 0%, rgba(3, 13, 26, 0.85) 100%),
+        url('https://img.magnific.com/fotos-premium/seccion-media-dos-hombres-negocios-dandose-mano-al-aire-libre_35752-620.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 20%, rgba(255,255,255,0.08), transparent 28%),
+                radial-gradient(circle at 85% 20%, rgba(44,181,50,0.18), transparent 25%);
+    pointer-events: none;
 }
 
 .hero-container {
@@ -440,37 +454,37 @@ body {
     margin: 0.6rem 0 2.5rem 0;
 }
 
-.grid-creditos {
+.grid-servicios {
     display: flex;
     flex-direction: column;
     gap: 1.8rem;
     margin-bottom: 2.5rem;
 }
 
-.credito-item {
+.servicio-item {
     display: flex;
     align-items: flex-start;
     gap: 1.2rem;
 }
 
-.credito-item i {
+.servicio-item i {
     font-size: 1.8rem;
     color: var(--verde-avanza);
     margin-top: 0.2rem;
 }
 
-.credito-item h5 {
+.servicio-item h5 {
     font-size: 1.05rem;
     font-weight: 600;
     margin-bottom: 0.2rem;
 }
 
-.credito-item p {
+.servicio-item p {
     font-size: 0.88rem;
     color: #94a3b8;
 }
 
-.btn-more-credits {
+.btn-more-services {
     border: 1px solid var(--verde-avanza);
     color: var(--verde-avanza);
     text-decoration: none;
