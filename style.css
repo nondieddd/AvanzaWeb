@@ -496,7 +496,8 @@ body {
     transition: all 0.2s ease;
 }
 
-.btn-more-credits:hover {
+/* Corregido el typo aquí para que el hover aplique correctamente a .btn-more-services */
+.btn-more-services:hover {
     background-color: var(--verde-avanza);
     color: #ffffff;
 }

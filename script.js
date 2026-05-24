@@ -5,18 +5,18 @@ document.addEventListener("DOMContentLoaded", function () {
         new TradingView.widget({
             "width": "100%",
             "height": "100%",
-            "symbol": "BMV:ME", // S&P/BMV IPC Index Oficial de México
+            "symbol": "BMV:ME", 
             "interval": "D",
             "timezone": "America/Mexico_City",
             "theme": "dark",
-            "style": "3", // Área sombreada para una lectura impecable y elegante
+            "style": "3", 
             "locale": "es",
             "enable_publishing": false,
             "hide_top_toolbar": true,
             "hide_legend": false,
             "save_image": false,
             "container_id": "bmv_live_widget",
-            "backgroundColor": "#051428", // Match exacto con el azul de fondo de AVANZA
+            "backgroundColor": "#051428", 
             "gridColor": "rgba(255, 255, 255, 0.03)",
             "lineWidth": 2
         });
@@ -40,15 +40,17 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     runAvanzaClock();
 
-    // 3. SELECCIÓN DE ENLACES ACTIVOS (CAMBIA SEGÚN EL SCROLL)
+    // 3. SELECCIÓN DE ENLACES ACTIVOS (CAMBIA SEGÚN EL SCROLL) - Optimización de rendimiento
     const sections = document.querySelectorAll("section");
     const navLinks = document.querySelectorAll(".nav-link");
 
     window.addEventListener("scroll", () => {
         let current = "";
+        const scrollPos = window.scrollY || window.pageYOffset;
+
         sections.forEach((section) => {
             const sectionTop = section.offsetTop;
-            if (pageYOffset >= sectionTop - 120) {
+            if (scrollPos >= sectionTop - 120) {
                 current = section.getAttribute("id");
             }
         });
@@ -59,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 link.classList.add("active");
             }
         });
-    });
+    }, { passive: true }); // Passive true optimiza el comportamiento de scroll en móviles
 
     // 4. ENVÍO DE FORMULARIO DIRECTO A WHATSAPP
     const contactForm = document.getElementById("contact-form");
